@@ -33,7 +33,7 @@ public class ViewHistoryDelivery {
         frame.getContentPane().setLayout(new BorderLayout());
 
         model = new DefaultTableModel(
-            new Object[]{"Transaction ID", "Delivery Type", "Delivery Fee", "Total Cost", "Created At", "Updated At", "Actions"}, 
+            new Object[]{"Transaction ID", "Delivery Type", "Delivery Fee", "Total Cost", "Created At", "Updated At"},
             0
         );
         table = new JTable(model);

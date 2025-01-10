@@ -71,7 +71,7 @@ public class MainMenu {
                 JOptionPane.showMessageDialog(null, "Belum Login", "Error",JOptionPane.ERROR_MESSAGE);
             } else {
                 frame.dispose();
-                new addTransaction();
+                new AddTransaction();
             }
 
         });
@@ -80,7 +80,7 @@ public class MainMenu {
         JButton viewHistoryBtn = createButton("Lihat History Pengiriman", 120, 280, buttonFont);
         viewHistoryBtn.addActionListener(e -> {
             frame.dispose();
-            new viewHistoryDelivery();
+            new ViewHistoryDelivery();
         });
         panel.add(viewHistoryBtn);
 
@@ -91,7 +91,7 @@ public class MainMenu {
                 JOptionPane.showMessageDialog(null, "Belum Login", "Error",JOptionPane.ERROR_MESSAGE);
             } else {
                 frame.dispose();
-                new addDetail();
+                new AddDetail();
             }
 
         });
