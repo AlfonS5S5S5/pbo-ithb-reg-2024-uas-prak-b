@@ -11,8 +11,8 @@ import javax.swing.JTextField;
 import Controller.TransactionDetailController;
 import Models.Enumm.TransactionStatus;
 
-public class addDetail {
-    public addDetail() {
+public class AddDetail {
+    public AddDetail() {
         details();
     }
 

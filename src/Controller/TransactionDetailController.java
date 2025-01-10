@@ -1,12 +1,14 @@
 package Controller;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.swing.JOptionPane;
 
+import Models.Classes.Transaction;
 import Models.Enumm.TransactionStatus;
 
 public class TransactionDetailController {
@@ -43,5 +45,29 @@ public class TransactionDetailController {
         } finally {
             conn.disconnect();
         }
+    }
+    
+    public static Transaction getTransactionDetail(int transactionId) {
+        Transaction transaction = null;
+        String query = "SELECT * FROM transaction WHERE id = ?";
+        try {
+            conn.connect();
+            PreparedStatement stmt = conn.con.prepareStatement(query);
+            stmt.setInt(1, transactionId);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                transaction = new Transaction();
+                transaction.setId(rs.getInt("id"));
+                transaction.setDelivery_type(rs.getString("delivery_type"));
+                transaction.setTotal_cost(rs.getInt("total_cost"));
+                transaction.setCreated_at(rs.getDate("created_at"));
+                transaction.setUpdated_at(rs.getDate("updated_at"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            conn.disconnect();
+        }
+        return transaction;
     }
 }

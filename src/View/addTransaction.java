@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 
 import Controller.TransactionController;
 
-public class addTransaction {
+public class AddTransaction {
 
     private JFrame frame;
     private JTextField nameField, addressField, phoneField, weightField;
@@ -19,7 +19,7 @@ public class addTransaction {
 
     private JComboBox<String> deliveryTypeCombo;
 
-    public addTransaction() {
+    public AddTransaction() {
         TransactionController transaction = new TransactionController();
 
         frame = new JFrame("Add Transaction");
