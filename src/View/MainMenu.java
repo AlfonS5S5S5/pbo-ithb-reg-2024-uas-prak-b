@@ -8,7 +8,10 @@ import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import Controller.LoginSingleton;
 
 public class MainMenu {
    private JFrame frame;
@@ -64,8 +67,13 @@ public class MainMenu {
 
         JButton addTransactionBtn = createButton("Menambahkan Transaksi Pengiriman", 120, 220, buttonFont);
         addTransactionBtn.addActionListener(e -> {
-            frame.dispose();
-            new addTransaction();
+            if (LoginSingleton.getInstance().getID() == 0) {
+                JOptionPane.showMessageDialog(null, "Belum Login", "Error",JOptionPane.ERROR_MESSAGE);
+            } else {
+                frame.dispose();
+                new addTransaction();
+            }
+
         });
         panel.add(addTransactionBtn);
 
@@ -76,6 +84,19 @@ public class MainMenu {
         });
         panel.add(viewHistoryBtn);
 
+        
+        JButton addDetailsButton = createButton("Menambahkan Detail Transaksi", 120, 340, buttonFont);
+        addDetailsButton.addActionListener(e -> {
+            if (LoginSingleton.getInstance().getID() == 0) {
+                JOptionPane.showMessageDialog(null, "Belum Login", "Error",JOptionPane.ERROR_MESSAGE);
+            } else {
+                frame.dispose();
+                new addDetail();
+            }
+
+        });
+        panel.add(addDetailsButton);
+        
         frame.add(panel);
         frame.setVisible(true);
 

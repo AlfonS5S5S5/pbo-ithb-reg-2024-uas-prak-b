@@ -1,6 +1,5 @@
 package View;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.JButton;
@@ -17,6 +16,8 @@ public class addTransaction {
     private JFrame frame;
     private JTextField nameField, addressField, phoneField, weightField;
     private JButton saveButton, backButton;
+
+    private JComboBox<String> deliveryTypeCombo;
 
     public addTransaction() {
         TransactionController transaction = new TransactionController();
@@ -58,12 +59,9 @@ public class addTransaction {
         deliveryTypeLabel.setBounds(50, 190, 100, 25);
         frame.add(deliveryTypeLabel);
 
-        ArrayList<String> deliveryTypesList = transaction.getDeliveryTypes();
+        String[] deliveryTypes = new TransactionController().getDeliveryTypes();
 
-        String[] deliveryTypes = new String[deliveryTypesList.size()];
-        deliveryTypes = deliveryTypesList.toArray(deliveryTypes);
-
-        JComboBox<String> deliveryTypeCombo = new JComboBox<>(deliveryTypes);
+        deliveryTypeCombo = new JComboBox<>(deliveryTypes);
         deliveryTypeCombo.setBounds(150, 190, 200, 25);
         frame.add(deliveryTypeCombo);
 

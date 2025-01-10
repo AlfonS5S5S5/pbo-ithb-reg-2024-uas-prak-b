@@ -10,7 +10,7 @@ public class LoginCheck {
     static DatabaseHandler conn = new DatabaseHandler();
 
     public static boolean Check (String phoneNum, String pass) {
-        String query = "SELECT id, phone, password FROM customer WHERE id = ? AND phone = ? AND password = ?";
+        String query = "SELECT id, phone, password FROM customer WHERE phone = ? AND password = ?";
         boolean berhasil = false;
 
         try {
