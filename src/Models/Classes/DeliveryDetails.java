@@ -23,6 +23,10 @@ public class DeliveryDetails {
         this.date = date;
         this.updated_by = updated_by;
     }
+
+    public DeliveryDetails () {
+        
+    }
     
     public int getId() {
         return id;
