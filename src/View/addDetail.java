@@ -83,7 +83,6 @@ public class addDetail {
                 }
             }
 
-
             frame.dispose();
             new MainMenu();
         });

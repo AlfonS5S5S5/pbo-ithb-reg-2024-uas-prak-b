@@ -83,6 +83,7 @@ public class Register {
 
                 if (isSaved) {
                     JOptionPane.showMessageDialog(null, "Selamat, Anda sudah selesai melakukan pendaftaran dan akan melanjutkan ke menu customer");
+                    frame.dispose();
                     new MainMenu();
                 } else {
                     JOptionPane.showMessageDialog(null, "Account Anda gagal didaftarkan!", "Coba lagi", JOptionPane.ERROR_MESSAGE);
