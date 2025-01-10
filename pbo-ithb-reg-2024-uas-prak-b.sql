@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2025 at 09:41 AM
+-- Generation Time: Jan 10, 2025 at 12:52 PM
 -- Server version: 11.1.2-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,17 @@ SET time_zone = "+00:00";
 --
 -- Database: `pbo-ithb-reg-2024-uas-prak-b`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `category_id` int(11) NOT NULL,
+  `category_type` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -42,7 +53,8 @@ CREATE TABLE `customer` (
 INSERT INTO `customer` (`id`, `password`, `name`, `address`, `phone`) VALUES
 (1, 'password123', 'John Doe', 'johndoe@example.com', '08123456789'),
 (2, 'password456', 'Jane Smith', 'janesmith@example.com', '08198765432'),
-(3, 'password789', 'Michael Johnson', 'michaelj@example.com', '08134567890');
+(3, 'password789', 'Michael Johnson', 'michaelj@example.com', '08134567890'),
+(4, 'crypto4life', 'mario', 'mario@crypto.com', '11223344');
 
 -- --------------------------------------------------------
 
@@ -92,9 +104,9 @@ CREATE TABLE `transaction` (
 --
 
 INSERT INTO `transaction` (`id`, `customer_id`, `delivery_type`, `expected_weight`, `total_cost`, `created_at`, `receipt_name`, `receipt_address`, `receipt_phone`) VALUES
-(1, 1, 'express', 10, 100000, '2025-01-10', 'Jane Doe', '456 Oak Avenue', '08198765432'),
-(2, 2, 'regular', 5, 50000, '2025-01-09', 'Michael Johnson', '789 Pine Road', '08134567890'),
-(3, 3, 'express', 20, 200000, '2025-01-08', 'John Doe', '123 Elm Street', '08123456789');
+(1, 1, 'Building Materials', 10, 100000, '2025-01-10', 'Jane Doe', '456 Oak Avenue', '08198765432'),
+(2, 2, 'House Moving', 5, 50000, '2025-01-09', 'Michael Johnson', '789 Pine Road', '08134567890'),
+(3, 3, 'Instant Delivery', 20, 200000, '2025-01-08', 'John Doe', '123 Elm Street', '08123456789');
 
 --
 -- Indexes for dumped tables
@@ -128,7 +140,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `delivery_details`

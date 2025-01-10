@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -73,7 +74,11 @@ public class Login {
                 String pass = String.valueOf(passwordField.getPassword());
 
                 if (LoginCheck.Check(phone, pass)) {
-
+                    JOptionPane.showMessageDialog(null, "Anda Berhasil Login");
+                    frame.dispose();
+                    new MainMenu();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Anda Gagal Login");
                 }
             }
         });
